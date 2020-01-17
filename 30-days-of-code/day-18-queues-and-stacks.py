@@ -1,5 +1,6 @@
 import sys
 
+
 class Solution:
     data = []
 
@@ -14,6 +15,7 @@ class Solution:
 
     def dequeueCharacter(self):
         return self.data.pop(0)
+
 
 # read the string s
 s = "racecar"

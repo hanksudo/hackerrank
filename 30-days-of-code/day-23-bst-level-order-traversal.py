@@ -34,12 +34,13 @@ class Solution:
             # enqueue
             if node.left is not None:
                 queue.append(node.left)
-            
+
             if node.right is not None:
                 queue.append(node.right)
 
         print(" ".join(map(str, results)))
         assert "3 2 5 1 4 7" == " ".join(map(str, results))
+
 
 myTree = Solution()
 root = None
