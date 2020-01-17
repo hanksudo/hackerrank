@@ -7,7 +7,7 @@ for i in range(n):
         if a[j] > a[j + 1]:
             a[j], a[j + 1] = a[j + 1], a[j]
             number_of_swaps += 1
-        
+
     if number_of_swaps == 0:
         break
 
