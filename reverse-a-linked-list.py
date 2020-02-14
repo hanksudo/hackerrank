@@ -1,5 +1,5 @@
-# Delete a Node
-# https://www.hackerrank.com/challenges/delete-a-node-from-a-linked-list/problem
+# Reverse a linked list
+# https://www.hackerrank.com/challenges/reverse-a-linked-list/problem
 
 class SinglyLinkedListNode:
     def __init__(self, node_data):
@@ -19,6 +19,7 @@ class SinglyLinkedList:
         else:
             self.tail.next = node
 
+
         self.tail = node
 
 def print_singly_linked_list(node, sep):
@@ -30,26 +31,25 @@ def print_singly_linked_list(node, sep):
         if node:
             print(sep, end='')
 
-def deleteNode(head, position):
-    if position == 0:
-        return head.next
-    
+def reverse(head):
     current = head
-    for _ in range(position - 1):
-        current = current.next
-    
-    current.next = current.next.next
-    return head
-
+    prev = None
+    while current is not None:
+        _next = current.next
+        current.next = prev
+        prev = current
+        current = _next
+    return prev
 
 if __name__ == '__main__':
-    llist = SinglyLinkedList()
+    tests = [[1, 2, 3, 4, 5]]
 
-    for llist_item in [20, 6, 2, 19, 7, 4, 15, 9]:
-        llist.insert_node(llist_item)
+    for tests_itr in tests:
+        llist = SinglyLinkedList()
 
-    position = 3
+        for llist_item in tests_itr:
+            llist.insert_node(llist_item)
 
-    llist1 = deleteNode(llist.head, position)
+        llist1 = reverse(llist.head)
 
-    print_singly_linked_list(llist1, ' ')  # 20 6 2 7 4 15 9
+        print_singly_linked_list(llist1, ' ')  # 5 4 3 2 1

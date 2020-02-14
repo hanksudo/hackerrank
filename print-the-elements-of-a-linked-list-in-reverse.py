@@ -34,10 +34,10 @@ def reversePrint(head):
     current = head
     prev = None
     while current is not None:
-        next = current.next
+        _next = current.next
         current.next = prev
         prev = current
-        current = next
+        current = _next
     
     current = prev
     print(current.data)

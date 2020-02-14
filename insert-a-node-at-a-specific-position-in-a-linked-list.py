@@ -22,12 +22,13 @@ class SinglyLinkedList:
         self.tail = node
 
 def print_singly_linked_list(node, sep):
-    list_elemenets = []
     while node:
-        list_elemenets.append(str(node.data))
+        print(node.data, end='')
+
         node = node.next
 
-    print(sep.join(list_elemenets))
+        if node:
+            print(sep, end='')
 
 def insertNodeAtPosition(head, data, position):
     new_node = SinglyLinkedListNode(data)
