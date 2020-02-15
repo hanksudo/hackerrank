@@ -19,7 +19,6 @@ class SinglyLinkedList:
         else:
             self.tail.next = node
 
-
         self.tail = node
 
 def print_singly_linked_list(node, sep):
@@ -34,7 +33,7 @@ def print_singly_linked_list(node, sep):
 def reverse(head):
     current = head
     prev = None
-    while current is not None:
+    while current:
         _next = current.next
         current.next = prev
         prev = current
