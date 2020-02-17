@@ -23,7 +23,7 @@ class Solution:
 
         # enqueue
         queue.append(root)
-        while len(queue):
+        while queue:
             # dequeue
             node = queue.pop(0)
             results.append(node.data)
