@@ -7,15 +7,15 @@ class node:
 """
 
 from math import inf
-def validateBST(node, min_value, max_value):
-    if node is None:
+def validateBST(root, min_value, max_value):
+    if root is None:
         return True
 
     return (
-        node.data > min_value and
-        node.data < max_value and
-        validateBST(node.left, min_value, node.data) and
-        validateBST(node.right, node.data, max_value)
+        root.data > min_value and
+        root.data < max_value and
+        validateBST(root.left, min_value, root.data) and
+        validateBST(root.right, root.data, max_value)
     )
 
 def checkBST(root):
