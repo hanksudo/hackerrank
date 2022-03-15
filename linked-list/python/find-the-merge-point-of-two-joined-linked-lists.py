@@ -14,16 +14,19 @@ c b
 d d
 """
 def findMergeNode(head1, head2):
+    if head1 is None or head2 is None:
+        return None
+
     current1 = head1
     current2 = head2
 
     while current1 != current2:
-        if current1.next is None:
+        if current1 is None:
             current1 = head2
         else:
             current1 = current1.next
 
-        if current2.next is None:
+        if current2 is None:
             current2 = head1
         else:
             current2 = current2.next
